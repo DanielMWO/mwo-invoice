@@ -10,13 +10,14 @@ public class Invoice {
 
 	public void addProduct(Product product) {
 		// TODO: implement
+		
 	}
 
 	public void addProduct(Product product, Integer quantity) {
 		// TODO: implement
 	}
 
-	public BigDecimal getSubtotal() {
+	public BigDecimal getNetPrice() {
 		return null;
 	}
 
@@ -24,7 +25,7 @@ public class Invoice {
 		return null;
 	}
 
-	public BigDecimal getTotal() {
+	public BigDecimal getGrossPrice() {
 		return null;
 	}
 }
