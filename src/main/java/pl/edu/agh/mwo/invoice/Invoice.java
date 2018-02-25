@@ -55,5 +55,23 @@ public class Invoice {
 		return invoiceNo;
 	}
 
+	public String printInvoice() {
+		String invoiceNoString = Integer.toString(invoiceNo);
+		for (Product  p : products.keySet()) {
+			
+			invoiceNoString += "\n";
+			invoiceNoString += p.getName();
+			invoiceNoString += products.get(p);
+			invoiceNoString += p.getPrice();
+		}
+		
+		return invoiceNoString;
+	}	
+	/*public String printInvoiceStream() {
+		String invoiceNoString = Integer.toString(invoiceNo);
+		invoiceNoString += products.keySet().stream()
+				.map(product -> product.getName() + " " +products.get(product)
+	}*/
+
 	
 }

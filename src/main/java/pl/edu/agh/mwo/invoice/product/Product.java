@@ -32,6 +32,13 @@ public abstract class Product {
 	}
 
 	public BigDecimal getPriceWithTax() {
-		return price.multiply(taxPercent).add(price);
+		BigDecimal grossPrice  =  price.multiply(taxPercent).add(price);
+		if (this instanceof IExciseTax) {
+		IExciseTax produktZAkcyzha = (IExciseTax)this;
+		grossPrice = grossPrice.add(produktZAkcyzha.getExciseTax());
+		}
+		return grossPrice;
 	}
+
+
 }

@@ -135,4 +135,19 @@ public class InvoiceTest {
 	public void testNextInvoiceHasGreater(){
 		Assert.assertThat(invoice2.getInvoiceNumber(),Matchers.greaterThan(invoice.getInvoiceNumber()));	
 	}
+	
+	@Test
+	public void testPrintedInvocieNumber() {
+		String printed = invoice.printInvoice();
+		String number = String.valueOf(invoice.getInvoiceNumber());
+		Assert.assertThat(printed, Matchers.containsString(number));
+	}
+	
+	@Test
+	public void testPrintedInvocieProduct() {
+		invoice.addProduct(new OtherProduct("Oscypek", new BigDecimal("2.50")));
+		String printed = invoice.printInvoice();
+		Assert.assertThat(printed, Matchers.containsString("Oscypek"));
+	}
 }
+	
